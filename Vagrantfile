@@ -7,7 +7,7 @@ Vagrant.configure('2') do |config|
   config.ssh.insert_key = false
   config.ssh.private_key_path = '~/.vagrant.d/insecure_private_key'
 
-  config.vm.define 'anxs' do |machine|
+  config.vm.define 'jarservice' do |machine|
     machine.vm.box = "debian/jessie64"
 
     machine.vm.network :private_network, ip: '192.168.55.55'
