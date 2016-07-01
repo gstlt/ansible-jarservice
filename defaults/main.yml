@@ -1,0 +1,4 @@
+---
+jarservice_name: jarservice
+runas_user: root
+jar_path: /opt/{{ jarservice_name }}

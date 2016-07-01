@@ -1,0 +1,15 @@
+[Unit]
+Description=jarservice_app
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar /opt/jarservice.jar
+ExecStop=/usr/bin/pkill jarservice
+WorkingDirectory=/opt
+Type=simple
+Restart=on-failure
+User=softline
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,26 @@
+---
+
+- name: Jarservice | Ensure configuration directory exists
+  file:
+    path: "{{ jar_path }}"
+    owner: "{{ runas_user }}"
+    group: "{{ runas_user }}"
+    mode: 0750
+    state: directory
+
+- name: Jarservice | Upload service file
+  template:
+      src: jarservice.service.j2
+      dest: "/lib/systemd/system/{{ jarservice_name }}.service"
+      owner: "root"
+      group: "root"
+      mode: 0640
+  notify:
+    - Restart systemd
+
+- name: Jarservice | ensure enabled and started
+  service:
+    name: "{{ jarservice_name }}"
+    state: started
+    enabled: yes
+    sleep: 3
