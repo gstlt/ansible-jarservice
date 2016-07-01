@@ -13,7 +13,7 @@ Vagrant.configure('2') do |config|
     machine.vm.network :private_network, ip: '192.168.55.55'
     machine.vm.hostname = 'jarservice.local'
     machine.vm.provision 'ansible' do |ansible|
-      ansible.playbook = 'tests/playbook.yml'
+      ansible.playbook = 'tests/playbook.yaml'
       ansible.sudo = true
       ansible.inventory_path = 'inventory'
       ansible.host_key_checking = false
