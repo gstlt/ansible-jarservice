@@ -1,6 +1,6 @@
 ---
 
-- name: Restart {{ jarservice_name }}
+- name: jarservice restart {{ jarservice_name }}
   service: name={{ jarservice_name }} state=restarted
 
 - name: Restart systemd

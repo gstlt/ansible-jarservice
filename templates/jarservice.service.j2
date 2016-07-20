@@ -3,12 +3,12 @@ Description=jarservice_app
 After=syslog.target network.target
 
 [Service]
-ExecStart=/usr/bin/java -jar /opt/{{jarservice_name}}/jarservice.jar
+ExecStart=/usr/bin/java {{jarservice_java_options}} -jar /opt/{{jarservice_name}}/jarservice.jar
 ExecStop=/usr/bin/pkill jarservice
 WorkingDirectory=/opt/{{jarservice_name}}
 Type=simple
 Restart=on-failure
-User={{runas_user}}
+User={{jarservice_runas_user}}
 
 [Install]
 WantedBy=multi-user.target

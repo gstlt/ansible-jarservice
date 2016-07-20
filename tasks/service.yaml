@@ -1,10 +1,9 @@
 ---
-
 - name: Jarservice | Ensure configuration directory exists
   file:
-    path: "{{ jar_path }}"
-    owner: "{{ runas_user }}"
-    group: "{{ runas_user }}"
+    path: "{{ jarservice_jar_path }}"
+    owner: "{{ jarservice_runas_user }}"
+    group: "{{ jarservice_runas_user }}"
     mode: 0750
     state: directory
 

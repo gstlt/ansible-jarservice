@@ -1,4 +1,5 @@
 ---
 jarservice_name: jarservice
-runas_user: root
-jar_path: /opt/{{ jarservice_name }}
+jarservice_runas_user: root
+jarservice_jar_path: /opt/{{ jarservice_name }}
+jarservice_java_options: "-Djava.security.egd=file:/dev/./urandom"
